@@ -5,14 +5,14 @@
 밸리데이션 기능을 통해 PIN번호의 유효성을 확인할 수 있습니다.
 
 ### 종류 및 라이브러리 추가 방법
-- DB_CLASS
+- db_class
 ```python
 from ATM_CONTROLLER import DB
 ```
 본인의 DB와 연동하고, PIN번호를 가져오기 위한 Class입니다.
 
 
-- Controll_CLASS
+- controll_class
 ```python
 from ATM_CONTROLLER import Controll
 ```
@@ -26,11 +26,11 @@ PIN번호의 유효성을 검사하기 위한 함수입니다.
 
 ---
 
-### 사용법
+### 사용법(db_class)
 - DB_CLASS
-본인의 DB와 연동하기 위해서는, DB연결 코드를 함수로 작성해주셔야합니다.
-pymysql 예시
+위 CLASS를 추가해준 뒤, 본인의 DB와 연동하기 위해서는, DB연결 코드를 함수로 작성해주셔야합니다. (pymysql 예시)
 ```python
+curs = "" 
 #작성하셔야되는 db연결 예제입니다.
 def db (host, user, password, db, port, charset= 'utf8'):
     global curs
@@ -59,5 +59,7 @@ Developer_db.select_connect(select_pin,"*" , "study_test") #select를 하기 위
 Developer_db.connect()
 Developer_db.select()
 ```
+
+### 사용법(controll_class)
 
 
