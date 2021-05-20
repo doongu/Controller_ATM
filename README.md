@@ -46,9 +46,13 @@ def select_pin(collom_name, table_name):
 ```
 
 함수를 작성한 후 라이브러리를 활용해 Class를 만들어주시면 됩니다.
+
 DB()의 구성요소는, db_connect, select_connect가 있습니다.
-db_connect를 인자로는 db_connect( 앞서 작성한 db연결 함수 이름, 앞서 작성한 db연결 함수의 인자들 )을 할당하시면 됩니다. 
-db_connect를 인자로는 db_connect( 앞서 작성한 select 함수 이름, 앞서 작성한 select 함수의 인자들 )을 할당하시면 됩니다. 
+
+##### db_connect의
+인자로는 db_connect( 앞서 작성한 db연결 함수 이름, 앞서 작성한 db연결 함수의 인자들 )을 할당하시면 됩니다. 
+##### select_connect의 
+인자로는 select_connect( 앞서 작성한 select 함수 이름, 앞서 작성한 select 함수의 인자들 )을 할당하시면 됩니다. 
 아래는 라이브러리를 활용한 예제입니다.
 ```python
 Developer_db = DB() #연결하는 생성자 생성
