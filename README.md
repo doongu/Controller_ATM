@@ -105,4 +105,9 @@ my_controller.withdraw_exe()  # 1달러 출금
 ```
 
 ### 3.사용법(벨리데이션 함수)
-
+My_Pin_Format을 import한 이후 문자열이 담긴 list형식으로 My_Pin_Format으로 전달해 주면 됩니다.
+```python
+Pin_list = ["123-11", "11-1", "23-2"]
+my_pin_format_list = My_Pin_Format(Pin_list)
+```
+My_Pin_Format은 위 예제의 return 값으로 ["32", "21", "21"]을 반환해 줍니다.
