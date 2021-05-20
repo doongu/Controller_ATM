@@ -2,7 +2,7 @@
 '''ATM을 Controller할 수 있는 라이브러리입니다.'''
 
 ### 요약
-밸리데이션 기능을 통해 PIN번호의 유효성을 확인할 수 있습니다.
+밸리데이션 기능을 통해 PIN번호의 유효성을 확인할 수 있습니다. controller 기능을 통해 잔액 확인, 입금, 출금을 할 수 있습니다.
 
 ### 종류 및 라이브러리 추가 방법
 - db_class
@@ -49,9 +49,9 @@ def select_pin(collom_name, table_name):
 
 DB()의 구성요소는, db_connect, select_connect가 있습니다.
 
-##### db_connect의
+#### db_connect의
 인자로는 db_connect( 앞서 작성한 db연결 함수 이름, 앞서 작성한 db연결 함수의 인자들 )을 할당하시면 됩니다. 
-##### select_connect의 
+#### select_connect의 
 인자로는 select_connect( 앞서 작성한 select 함수 이름, 앞서 작성한 select 함수의 인자들 )을 할당하시면 됩니다. 
 아래는 라이브러리를 활용한 예제입니다.
 ```python
