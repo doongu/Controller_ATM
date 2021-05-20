@@ -25,6 +25,8 @@ from ATM_CONTROLLER import My_Pin_Format
 ```
 PIN번호의 유효성을 검사하기 위한 함수입니다.
 
+---
+
 ###사용법
 - DB_CLASS
 본인의 DB와 연동하기 위해서는, DB연결 코드를 함수로 작성해주셔야합니다.
