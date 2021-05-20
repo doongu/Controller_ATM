@@ -26,7 +26,7 @@ PIN번호의 유효성을 검사하기 위한 함수입니다.
 
 ---
 
-### 사용법(db_class)
+### 1. 사용법(db_class)
 - DB_CLASS
 위 CLASS를 추가해준 뒤, 본인의 DB와 연동하기 위해서는, DB연결 코드를 함수로 작성해주셔야합니다. (pymysql 예시)
 ```python
@@ -45,21 +45,25 @@ def select_pin(collom_name, table_name):
     print(curs.fetchall())
 ```
 
-함수를 작성한 후 라이브러리를 활용해 Class를 만들어주시면 됩니다. 아래는 라이브러리를 활용한 예제입니다.
-
+함수를 작성한 후 라이브러리를 활용해 Class를 만들어주시면 됩니다.
+DB()의 구성요소는, db_connect, select_connect가 있습니다.
+db_connect를 인자로는 db_connect( 앞서 작성한 db연결 함수 이름, 앞서 작성한 db연결 함수의 인자들 )을 할당하시면 됩니다. 
+db_connect를 인자로는 db_connect( 앞서 작성한 select 함수 이름, 앞서 작성한 select 함수의 인자들 )을 할당하시면 됩니다. 
+아래는 라이브러리를 활용한 예제입니다.
 ```python
 Developer_db = DB() #연결하는 생성자 생성
 Developer_db.db_connect(db, "localhost", "root", "asd", "study_test", 3306, "utf8") #인자로 (만들어둔 함수, 그 함수의 인자들)로 입력하시면 됩니다.
 Developer_db.select_connect(select_pin,"*" , "study_test") #select를 하기 위해 (만들어둔 select 함수, 그 함수의 인자들)을 입력하시면 됩니다.
 ```
-
-이후에는 Class를 호출하면 이전에 만든 함수를 실행시킬 수 있습니다.
-
+DB()의 db_connect와 select_connect에 값을 전달 하셨다면, connect()와 select()함수로 db를 연동하고, 값을 불러 올 수 있습니다.
+아래는 connect()와 select()사용 예제입니다.
 ```python
 Developer_db.connect()
 Developer_db.select()
 ```
 
-### 사용법(controll_class)
+### 2.사용법(controll_class)
 
+
+### 3.사용법(controll_class)
 
