@@ -1,5 +1,5 @@
 # ATM_Controller Read.me
-'''ATM을 Controller할 수 있는 라이브러리입니다.'''
+'''ATM을 Controll할 수 있는 라이브러리입니다.'''
 
 ### 요약
 밸리데이션 기능을 통해 PIN번호의 유효성을 확인할 수 있습니다. controller 기능을 통해 잔액 확인, 입금, 출금을 할 수 있습니다.
