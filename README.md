@@ -7,9 +7,7 @@ ATM을 Controller할 수 있는 라이브러리입니다.
 
 종류 및 라이브러리 추가 방법
 - DB_CLASS
-'''
-from ATM_CONTROLLER import DB
-'''
+'''from ATM_CONTROLLER import DB'''
 본인의 DB와 연동하고, PIN번호를 가져오기 위한 Class입니다.
 
 
