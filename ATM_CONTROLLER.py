@@ -54,22 +54,6 @@ class Controll:
     #출금 함수 실행
     def withdraw_exe(self):
         self.withdraw_func(*self.withdraw_list)
-
-#list로 입력을 받는다.
-def My_Pin_Format(*pin):
-    retun_pin_format = []
-    for i in pin:
-        if PIN(i):
-            return_pin_format.append(PIN(i))
-        else:
-            print("문자열을 제대로 입력해주세요.")
-            return False
-    else:
-        print("당신 은행의 포맷형태들은 다음과 같습니까?")
-        for i in retun_pin_format:
-            print(i)
-        return retun_pin_format
-
 def PIN(pin):
     #벨리데이션
 
@@ -84,12 +68,27 @@ def PIN(pin):
             if check_str != "-" and check_str.isdigit() == False:
                 print("문자열을 제대로 입력해주세요.")
                 return False
-        else: #for문이 성공적으로 완수하면 벨리데이션값 리턴
-            list_key_val = list(map(lambda x : len(x), pin.split("-")))
-            return_ket_val = "".join(list_key_val)
-            return return_ket_val
+        #for문이 성공적으로 완수하면 벨리데이션값 리턴
+        list_key_val = list(map(lambda x : str(len(x)), pin.split("-")))
+        return_ket_val = "".join(list_key_val)
+        return return_ket_val
 
     #type이 문자열이 아니면 에러 출력 return False
     else:
-        print("문자열을 입력해주세요.")
+        print("문자열을 입력해야합니다.")
         return False
+
+#list로 입력을 받는다.
+def My_Pin_Format(*pin):
+    return_pin_format = []
+    for i in pin[0]:
+        if PIN(i):
+            return_pin_format.append(PIN(i))
+        else:
+            print("문자열에 문제가 있습니다.")
+            return False
+    else:
+        print("당신 은행의 포맷형태들은 다음과 같습니까?")
+        for i in return_pin_format:
+            print(i)
+        return return_pin_format
