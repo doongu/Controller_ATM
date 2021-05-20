@@ -67,7 +67,42 @@ Developer_db.select()
 ```
 
 ### 2.사용법(controll_class)
+위와 크게 사용방식은 바뀌지 않습니다.
+```python
+#작성하셔야되는 잔액확인함수 예제입니다.
+def confirm( table_name):
+#def confirm(money_collom_name, table_name, pin_collom, pin):
+    global curs
+    #query = "select %s from %s where %s = %s" % (money_collom_name, table_name, pin_collom, pin)
+    query = "select * from %s" % (table_name)
+    curs.execute(query)
+    print(curs.fetchall())
 
+#작성하셔야되는 입금함수 예제입니다.
+def deposit(money_collom_name, table_name, input_money ,pin_collom, pin):
+    global curs
+    query = '''update %s set %s = %s + %s where %s = "%s"''' % (table_name, money_collom_name, money_collom_name, input_money, pin_collom, str(pin))
+    curs.execute(query)
+    curs.fetchall()
 
-### 3.사용법(controll_class)
+#작성하셔야되는 출금함수 예제입니다.
+def withdraw(money_collom_name, table_name, pin_collom, pin):
+    global curs
+    query = '''update %s set %s = %s - %s where %s = "%s"''' % (table_name, money_collom_name, money_collom_name, input_money, pin_collom, str(pin))
+    curs.execute(query)
+    curs.fetchall()
+```
+
+```python
+my_controller = Controll()
+my_controller.confirm_money(confirm, "study_test" )  # (만들어둔 confirm 함수, 인자들)
+my_controller.deposit_money(deposit, "pin", "study_test", 1, "user1", "HKJ") # (만들어둔 deposit함수, 인자들)
+my_controller.withdraw_money(withdraw, "pin", "study_test", 1, "user1", "HKJ") # (만들어둔 withdraw_money 함수, 인자들)
+
+my_controller.confirm_exe() # 잔액 확인
+my_controller.deposit_exe() # 1달러 입금
+my_controller.withdraw_exe()  # 1달러 출금
+```
+
+### 3.사용법(벨리데이션 함수)
 
